@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
 * bubble_sort - bubble sort algorithm, stps through each element of the list
 * as it compares th element with the previous element if need be, it swaps the
@@ -11,6 +12,8 @@ void bubble_sort(int *array, size_t size)
 	bool swap = false;
 	int i, j, len = size, tmp;
 
+	if (array == NULL || size < 2)
+		return; 
 	for (i = 0; i < len - 1; i++)
 	{
 		for (j = 0; j < len - 1; j++)
@@ -25,6 +28,6 @@ void bubble_sort(int *array, size_t size)
 			}
 		}
 		if (swap == false)
-			break;
+			return;
 	}
 }
