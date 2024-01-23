@@ -1,33 +1,33 @@
 #include "sort.h"
-
 /**
-* bubble_sort - bubble sort algorithm, stps through each element of the list
-* as it compares th element with the previous element if need be, it swaps the
-* elements according to comparison operator
-* @array: list to be sorted
-* @size: size of the list to be sorted
+* bubble_sort - bubble sort algorithm of numbers
+* in ascending order
+* @array: pointer to array
+* @size: size of the array
 */
 void bubble_sort(int *array, size_t size)
 {
+	size_t i = 0, j;
+	int tmp;
 	bool swap = false;
-	int i, j, len = size, tmp;
 
 	if (array == NULL || size < 2)
 		return;
-	for (i = 0; i < len - 1; i++)
+	while (i < (size - 1))
 	{
-		for (j = 0; j < len - 1; j++)
+		for (j = 1; j < size; j++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[j - 1] > array[j])
 			{
 				tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
-				swap = true;
+				array[j] = array[j - 1];
+				array[j - 1] = tmp;
 				print_array(array, size);
+				swap = true;
 			}
 		}
 		if (swap == false)
 			return;
+		i++;
 	}
 }
