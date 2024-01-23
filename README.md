@@ -19,5 +19,9 @@ algorithm complexity is fuction of time which take number of elements to be sort
         compile with 
 		gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 0-bubble_sort.c 0-main.c print_array.c -o bubble
         run the program on cmdline "./bubble" - print array after every swap
+1:2-selection_sort.c - selection sort algorithm c code
+    compile with
+        gcc -Wall -Wextra 2-main.c 2-selection_sort.c print_array.c -o select	
+	2-main.c - should contain array to be sorted and a call to selection sort by passing the array and its size
 
 Author <kiptooharon.hk@gmail.com>
