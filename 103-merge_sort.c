@@ -11,6 +11,7 @@ void merge(int *array, int low, int middle, int high)
 	int l_size = middle - low + 1, r_size = high - middle, idx;
 	int *l_array, *r_array, i = low, j = 0, l = 0;
 
+	printf("Merging...\n");
 	l_array = malloc(sizeof(int) * l_size);
 	r_array = malloc(sizeof(int) * r_size);
 	while (i <= high)
@@ -27,6 +28,11 @@ void merge(int *array, int low, int middle, int high)
 		}
 		i++;
 	}
+	printf("[left]: ");
+	print_array(l_array, l_size);
+	printf("[right]: ");
+	print_array(r_array, r_size);
+
 	i = j = 0;
 	idx = low;
 	while (i < l_size && j < r_size)
